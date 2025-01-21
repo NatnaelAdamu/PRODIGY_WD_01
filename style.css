@@ -83,19 +83,24 @@ section {
   background: #16d8f2;
   color: rgb(236, 225, 225);
   justify-content: center;
-  align-content: space-around;
+  align-items: center;
   overflow: hidden;
+  padding: 5vw 2vw;
+  min-height: 100vh; /* Ensure the home section has a minimum height */
 }
+
 #home h1 {
   font-size: 3vw;
   color: #fafafa;
   margin-bottom: 1vw;
+  min-font-size: 24px; /* Minimum font size for h1 */
 }
 
 #home p {
   font-size: 1.7vw;
   color: #fbeeee;
   margin-bottom: 2vw;
+  min-font-size: 16px; /* Minimum font size for p */
 }
 
 .home-cars {
@@ -103,16 +108,15 @@ section {
   flex-direction: row;
   gap: 2vw;
   width: 100%;
-  height: auto;
- }
-
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping to maintain visibility */
+}
 
 .home-img {
- 
   position: relative;
   width: 100%;
+  max-width: 45%; /* Restrict maximum width of each image */
   height: auto;
-  max-width: 100%;
   background-color: #3dd3ee;
   border-radius: 1rem;
   overflow: hidden;
@@ -120,18 +124,70 @@ section {
   transition: transform 0.3s, box-shadow 0.3s ease;
 }
 
-.home-img:hover .home-img {
-  transform: scale(1.1); /* Enlarge image on hover */
-}
-
 .home-img:hover {
   transform: translateY(-10px); /* Slight lift effect on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.home-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the space while maintaining aspect ratio */
+  border-radius: 1rem;
+}
+
+.home-img:hover .home-img {
+  transform: scale(1.1); /* Enlarge image on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #home h1 {
+    font-size: 5vw;
+    min-font-size: 24px; /* Ensure minimum font size on smaller screens */
+  }
+
+  #home p {
+    font-size: 3vw;
+    min-font-size: 16px; /* Ensure minimum font size on smaller screens */
+  }
+
+  .home-cars {
+    flex-direction: column; /* Stack images vertically on small screens */
+  }
+
+  .home-img {
+    max-width: 90%; /* Ensure images take more space on small screens */
+    margin-bottom: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 6vw;
+    min-font-size: 24px; /* Ensure minimum font size */
+  }
+
+  #home p {
+    font-size: 4vw;
+    min-font-size: 16px; /* Ensure minimum font size */
+  }
+
+  .home-cars {
+    flex-direction: column; /* Stack images vertically */
+  }
+
+  .home-img {
+    max-width: 90%; /* Images take up more space */
+    margin-bottom: 2vw;
+  }
+}
+
+
+
 /* Product Section Styling */
 #product {
-  background: linear-gradient(to bottom, #f8f9fa, #eaeaea);
+  background: linear-gradient(to bottom, #c9dff6, #e3e2e2);
   padding: 3vw 2vw;
   text-align: center;
 }
@@ -196,3 +252,317 @@ section {
   font-size: 1rem;
 }
 
+/* service section styling*/
+#services {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  background: #ecefef;
+  color: rgb(8, 1, 1);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5vw 2vw;
+  min-height: 100vh; /* Ensure the home section has a minimum height */
+}
+
+#services h1 {
+  font-size: 3vw;
+  color: #fafafa;
+  margin-bottom: 1vw;
+  min-font-size: 24px; /* Minimum font size for h1 */
+}
+
+#services p {
+  font-size: 1.7vw;
+  color: #0a0404;
+  margin-bottom: 2vw;
+  min-font-size: 16px; /* Minimum font size for p */
+}
+
+.services-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping to maintain visibility */
+}
+
+.service-item {
+  position: relative;
+  width: 100%;
+  max-width: 45%; /* Restrict maximum width of each image */
+  height: auto;
+  background-color: #c7ced0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.services:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover .service-item {
+  transform: scale(1.1); /* Enlarge image on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #services h1 {
+    font-size: 5vw;
+    min-font-size: 24px; /* Ensure minimum font size on smaller screens */
+  }
+
+  #services p {
+    font-size: 3vw;
+    min-font-size: 16px; /* Ensure minimum font size on smaller screens */
+  }
+
+  .services-list {
+    flex-direction: column; /* Stack images vertically on small screens */
+  }
+
+  .service-item {
+    max-width: 90%; /* Ensure images take more space on small screens */
+    margin-bottom: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #services h1 {
+    font-size: 6vw;
+    min-font-size: 24px; /* Ensure minimum font size */
+  }
+
+  #services p {
+    font-size: 4vw;
+    min-font-size: 16px; /* Ensure minimum font size */
+  }
+
+  .home-cars {
+    flex-direction: column; /* Stack images vertically */
+  }
+
+  .home-img {
+    max-width: 90%; /* Images take up more space */
+    margin-bottom: 2vw;
+  }
+}
+
+/* styling about us section*/
+
+#about {
+  background: linear-gradient(to bottom, #dde9f7, #61f4f468);
+  padding: 3vw 2vw;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 3vw;
+  color: #333;
+  margin-bottom: 1vw;
+}
+
+#about p {
+  font-size: 1.5vw;
+  color: #555;
+  margin-bottom: 3vw;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Contact Button */
+.contact-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Contact Modal */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.contact-modal .modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease;
+}
+
+.contact-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.contact-modal .close-btn:hover {
+  color: #ff0000;
+}
+
+.contact-modal h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.contact-modal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact-modal input,
+.contact-modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-modal input:focus,
+.contact-modal textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.contact-modal button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-modal button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Success/Error Message */
+#formMessage {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Modal Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact Button - Float on Top */
+.contact-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1100; /* Ensures it stays on top */
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Modal Styling (unchanged from earlier) */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}

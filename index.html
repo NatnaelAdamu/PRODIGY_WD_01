@@ -24,6 +24,8 @@
     </nav>
 
     <main>
+      <button class="contact-btn">Contact Me</button>
+
       <!-- Home Section -->
       <section id="home">
         <div class="home-content">
@@ -37,10 +39,10 @@
         </div>
         <div class="home-cars">
           <div class="home-img">
-            <img src="./asset/carsa.jpg" alt="Car Available" />
+            <img src="./asset/cars1.jpg" alt="Car Available" />
           </div>
           <div class="home-img">
-            <img src="./asset/carsc.jpg" alt="Car Available" />
+            <img src="./asset/cars4.jpg" alt="Car Available" />
           </div>
         </div>
       </section>
@@ -49,6 +51,18 @@
       <section id="product">
         <h2>Our Products</h2>
         <p>Explore our range of cars for every need.</p>
+        <p>
+          <label for="filter">Filter by category:</label>
+          <select id="filter">
+            <option value="all">All</option>
+            <option value="Luxury Sedan">Luxury Sedan</option>
+            <option value="Family SUV">Family SUV</option>
+            <option value="Sport Coupe">Sport Coupe</option>
+            <option value="Compact Hatchback">Compact Hatchback</option>
+            <option value="Off-Road 4x4">Off-Road 4x4</option>
+            <option value="Electric Vehicle">Electric Vehicle</option>
+          </select>
+        </p>
         <div class="product-container">
           <div class="product-item">
             <img src="./asset/car1.jpg" alt="Luxury Sedan" />
@@ -104,7 +118,7 @@
         </p>
         <div class="services-list">
           <div class="service-item">
-            <img src="./asset/service1.jpg" alt="Chauffeur Service" />
+            <img src="./asset/carsc.jpg" alt="Chauffeur Service" />
             <h3>Chauffeur Service</h3>
             <p>
               Relax and let our professional drivers take you to your
@@ -112,7 +126,7 @@
             </p>
           </div>
           <div class="service-item">
-            <img src="./asset/service2.jpg" alt="Airport Transfers" />
+            <img src="./asset/carsb.jpg" alt="Airport Transfers" />
             <h3>Airport Transfers</h3>
             <p>
               Enjoy seamless airport pickup and drop-off services for
@@ -120,7 +134,7 @@
             </p>
           </div>
           <div class="service-item">
-            <img src="./asset/service3.jpg" alt="Long-Term Rentals" />
+            <img src="./asset/carsa.jpg" alt="Long-Term Rentals" />
             <h3>Long-Term Rentals</h3>
             <p>
               Affordable and flexible long-term rental options for individuals
@@ -149,10 +163,34 @@
           </p>
         </div>
         <div class="about-img">
-          <img src="./asset/about.jpg" alt="Our Team" />
+          <img src="./asset/cars1.jpg" alt="Our Team" />
         </div>
       </section>
     </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+
+    <!-- Contact Me Popup -->
+    <div id="contactModal" class="contact-modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <div id="formMessage"></div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
